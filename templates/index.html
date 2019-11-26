@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Newsapp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <app-root></app-root>
+  <script type="text/javascript" src="{% static 'runtime-es2015.js' %}"></script>
+  <script type="text/javascript" src="{% static 'polyfills-es2015.js' %}"></script>
+  <script type="text/javascript" src="{% static 'runtime-es5.js' %}"></script>
+  <script type="text/javascript" src="{% static 'polyfills-es5.js' %}"></script>
+  <script type="text/javascript" src="{% static 'styles-es2015.js' %}"></script>
+  <script type="text/javascript" src="{% static 'styles-es5.js' %}"></script></body>
+  <script type="text/javascript" src="{% static 'vendor-es2015.js' %}"></script>
+  <script type="text/javascript" src="{% static 'main-es2015.js' %}"></script></body>
+
+  <script type="text/javascript" src="{% static 'vendor-es5.js' %}"></script>
+  <script type="text/javascript" src="{% static 'main-es5.js' %}"></script></body>
+</html>
