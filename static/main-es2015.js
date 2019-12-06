@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-----------------Header--------------------->\n<div class=\"usim-container\">\n  <div class=\"head-content\">\n    <div class=\"container-fluid\" style=\"padding: 0;\">\n      <div class=\"row\">\n        <div class=\"col-12\">\n            <nav class=\"navbar navbar-expand-lg navbar-light mat-elevation-z6\">\n                <div style=\"margin-left: 50px;\">\n                    <a routerLink=\"/\"><span class=\"g-style-span\"> <mat-icon style=\"font-size: 15px; margin-bottom: 5px;\">menu_book</mat-icon>NewsApp</span></a>\n                </div>\n                </nav>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n    <div class=\"container-fluid h-100\">\n      <div class=\"row h-100\">\n        <div class=\"col-md-12\">\n            <router-outlet></router-outlet>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<!-----------------Header--------------------->\n<div class=\"usim-container\">\n  <div class=\"head-content\">\n    <div class=\"container-fluid\" style=\"padding: 0;\">\n      <div class=\"row\">\n        <div class=\"col-12\">\n            <nav class=\"navbar navbar-expand-lg navbar-light mat-elevation-z6\">\n                <div style=\"margin-left: 50px;\">\n                    <a routerLink=\"/\"><span class=\"g-style-span\"> <mat-icon style=\"font-size: 15px; margin-bottom: 5px;\">menu_book</mat-icon>NewsApp</span></a>\n                </div>\n                <form class=\"form-inline\" style=\"width: 70%;\">\n                  <input  class=\"form-control\"\n                  [ngModelOptions]=\"{standalone: true}\"\n                  [(ngModel)]=\"keyword\"\n                  style=\"margin-left: 30px; background-color: #004a96; border-color: #4279b2; color:white; width: 70%;\"\n                   type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n                  <button class=\"btn btn-outline-primary\"\n                  (click)=\"search()\"\n                  style=\"border-color: #4279b2; color: #a09f9f; margin-left: 10px;\">Search</button>\n                </form>\n                </nav>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n    <div class=\"container-fluid h-100\">\n      <div class=\"row h-100\">\n        <div class=\"col-12\">\n            <router-outlet></router-outlet>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = "<div  class=\"container-fluid feed-container\">\n    <div clas
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"container-fluid newsfeed-container\" >\n    <div class=\"row justify-content-end\" *ngIf=\"allNews\">\n      <div class=\"col-7\">\n        <div class=\"container-fluid preview\">\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <h1> <a [routerLink]=\"['/feed', data.id]\"> {{data.title}}</a></h1>\n            </div>\n          </div>\n          <div class=\"row\" *ngIf=\"data.author\">\n            <div class=\"col-12\">\n              <h5> <span>Author: </span>{{data.author}}</h5>\n            </div>\n          </div>\n          \n          <div class=\"row\">\n            <div class=\"col-8\">\n              <div>\n                <img [src]=\"data.urlToImage\" class=\"img-fluid\">\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <div>\n                <p>\n                  {{data.description}}...\n                  <a [routerLink]=\"['/feed', data.id]\"> Readmore</a>\n                </p>\n              </div>\n            </div>\n          </div>\n          \n        </div>\n        \n        <div *ngFor=\"let news of allNews\">\n          <mat-card class=\"news-card\">\n            <mat-card-header>\n              <div mat-card-avatar  style=\"width: 170px; height: 170px;\"> <img mat-card-image [src]=\"news.urlToImage\"></div>\n              <mat-card-title><a [routerLink]=\"['/feed', news.id]\"> {{news.title}}</a></mat-card-title>\n              <mat-card-subtitle>{{news.author}}, <mat-icon class=\"time\">access_time</mat-icon>{{news.publishedAt | date}}</mat-card-subtitle>\n              <mat-card-subtitle></mat-card-subtitle>\n            </mat-card-header>\n            <mat-card-content>\n              <p>\n                {{news.description}}...\n                <a [routerLink]=\"['/feed', news.id]\"> Readmore</a>\n              </p>\n            </mat-card-content>\n            <mat-card-actions>\n              \n            </mat-card-actions>\n          </mat-card>\n        </div>\n      </div>\n      <div class=\"col-4\">\n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <h3 class=\"top-story\">Top Stories</h3>\n              <mat-divider></mat-divider>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <mat-list>\n                <!-- <h3 mat-subheader>Folders</h3> -->\n                <mat-list-item *ngFor=\"let story of headlines\">\n                  <!-- <mat-icon mat-list-icon>folder</mat-icon> -->\n                  <h3 mat-line >\n                    <a  [routerLink]=\"['/feed', story.id]\">{{story.title}}</a>\n                  </h3 >\n                  <p mat-line> <span *ngIf=\"story.author\"> {{story.author}}, </span> {{story.publishedAt | date}} </p>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n              </mat-list>\n            </div>\n          </div>\n          \n        </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "  <div class=\"container-fluid newsfeed-container\" >\n    <div class=\"row justify-content-end\" *ngIf=\"allNews\">\n      <div class=\"col-lg-7\">\n        <div class=\"container-fluid preview\">\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <h1> <a [routerLink]=\"['/feed', data.id]\"> {{data.title}}</a></h1>\n            </div>\n          </div>\n          <div class=\"row\" *ngIf=\"data.author\">\n            <div class=\"col-12\">\n              <h5> <span>Author: </span>{{data.author}}</h5>\n            </div>\n          </div>\n          \n          <div class=\"row\">\n            <div class=\"col-8\">\n              <div>\n                <img [src]=\"data.urlToImage\" class=\"img-fluid\">\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <div>\n                <p>\n                  {{data.description}}...\n                  <a [routerLink]=\"['/feed', data.id]\"> Readmore</a>\n                </p>\n              </div>\n            </div>\n          </div>\n          \n        </div>\n        \n        <div *ngFor=\"let news of allNews\">\n          <mat-card class=\"news-card\">\n            <mat-card-header>\n              <div mat-card-avatar  style=\"width: 170px; height: 170px;\"> <img mat-card-image [src]=\"news.urlToImage\"></div>\n              <mat-card-title><a [routerLink]=\"['/feed', news.id]\"> {{news.title}}</a></mat-card-title>\n              <mat-card-subtitle>{{news.author}}, <mat-icon class=\"time\">access_time</mat-icon>{{news.publishedAt | date}}</mat-card-subtitle>\n              <mat-card-subtitle></mat-card-subtitle>\n            </mat-card-header>\n            <mat-card-content>\n              <p>\n                {{news.description}}...\n                <a [routerLink]=\"['/feed', news.id]\"> Readmore</a>\n              </p>\n            </mat-card-content>\n            <mat-card-actions>\n              \n            </mat-card-actions>\n          </mat-card>\n        </div>\n      </div>\n      <div class=\"col-lg-4\">\n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <h3 class=\"top-story\">Top Stories</h3>\n              <mat-divider></mat-divider>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-12\">\n              <mat-list>\n                <!-- <h3 mat-subheader>Folders</h3> -->\n                <mat-list-item *ngFor=\"let story of headlines\">\n                  <!-- <mat-icon mat-list-icon>folder</mat-icon> -->\n                  <h3 mat-line >\n                    <a  [routerLink]=\"['/feed', story.id]\">{{story.title}}</a>\n                  </h3 >\n                  <p mat-line> <span *ngIf=\"story.author\"> {{story.author}}, </span> {{story.publishedAt | date}} </p>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n              </mat-list>\n            </div>\n          </div>\n          \n        </div>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -67,15 +67,22 @@ module.exports = "  <div class=\"container-fluid newsfeed-container\" >\n    <di
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApiServiceService", function() { return ApiServiceService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 
 
 
 let ApiServiceService = class ApiServiceService {
     constructor(http) {
         this.http = http;
-        this.url = "/api/news";
+        this.searchKeyword = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.url = "http://usimweb1.f206.basf-ag.de:9996/api/news";
+    }
+    setKeyword(keyword) {
+        this.searchKeyword.emit(keyword);
+    }
+    getKeyword() {
+        return this.searchKeyword;
     }
     setClickedId(id) {
         this.clckedId = id;
@@ -100,10 +107,13 @@ let ApiServiceService = class ApiServiceService {
     }
 };
 ApiServiceService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"])()
+], ApiServiceService.prototype, "searchKeyword", void 0);
 ApiServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
         providedIn: 'root'
     })
 ], ApiServiceService);
@@ -162,7 +172,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "nav {\r\n    height: 70px;\r\n    background:  #004a96;\r\n}\r\n\r\n::ng-deep .mat-card-avatar {\r\n    border-radius: 0% !important;\r\n    margin-right: 10px;\r\n}\r\n\r\n.news-card {\r\n    margin: 20px 0px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksNEJBQTRCO0lBQzVCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibmF2IHtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIGJhY2tncm91bmQ6ICAjMDA0YTk2O1xyXG59XHJcblxyXG46Om5nLWRlZXAgLm1hdC1jYXJkLWF2YXRhciB7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwJSAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG59XHJcblxyXG4ubmV3cy1jYXJkIHtcclxuICAgIG1hcmdpbjogMjBweCAwcHg7XHJcbn0iXX0= */"
+module.exports = "nav {\r\n    height: 70px;\r\n    background:  #004a96;\r\n}\r\n\r\n::ng-deep .mat-card-avatar {\r\n    border-radius: 0% !important;\r\n    margin-right: 10px;\r\n}\r\n\r\n.news-card {\r\n    margin: 20px 0px;\r\n}\r\n\r\n.btn:hover{\r\n   background-color: #004a96; \r\n}\r\n\r\n@media (max-width: 700px) { \r\n\r\n    .form-inline{\r\n      visibility: hidden;\r\n    }\r\n   }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksNEJBQTRCO0lBQzVCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtHQUNHLHlCQUF5QjtBQUM1Qjs7QUFFQTs7SUFFSTtNQUNFLGtCQUFrQjtJQUNwQjtHQUNEIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJuYXYge1xyXG4gICAgaGVpZ2h0OiA3MHB4O1xyXG4gICAgYmFja2dyb3VuZDogICMwMDRhOTY7XHJcbn1cclxuXHJcbjo6bmctZGVlcCAubWF0LWNhcmQtYXZhdGFyIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDAlICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbn1cclxuXHJcbi5uZXdzLWNhcmQge1xyXG4gICAgbWFyZ2luOiAyMHB4IDBweDtcclxufVxyXG5cclxuLmJ0bjpob3ZlcntcclxuICAgYmFja2dyb3VuZC1jb2xvcjogIzAwNGE5NjsgXHJcbn1cclxuXHJcbkBtZWRpYSAobWF4LXdpZHRoOiA3MDBweCkgeyBcclxuXHJcbiAgICAuZm9ybS1pbmxpbmV7XHJcbiAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIH1cclxuICAgfSJdfQ== */"
 
 /***/ }),
 
@@ -178,13 +188,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _api_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api-service.service */ "./src/app/api-service.service.ts");
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(mainService) {
+        this.mainService = mainService;
         this.title = 'newsapp';
     }
+    search() {
+        this.mainService.setKeyword(this.keyword);
+        console.log("Called", this.keyword);
+    }
 };
+AppComponent.ctorParameters = () => [
+    { type: _api_service_service__WEBPACK_IMPORTED_MODULE_2__["ApiServiceService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -218,6 +238,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _newsfeed_newsfeed_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./newsfeed/newsfeed.component */ "./src/app/newsfeed/newsfeed.component.ts");
 /* harmony import */ var _details_details_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./details/details.component */ "./src/app/details/details.component.ts");
 /* harmony import */ var _api_service_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./api-service.service */ "./src/app/api-service.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
 
 
 
@@ -243,7 +265,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
             _mat_stylemodules__WEBPACK_IMPORTED_MODULE_7__["MatStlyleModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"]
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"]
         ],
         providers: [_api_service_service__WEBPACK_IMPORTED_MODULE_10__["ApiServiceService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -482,10 +505,24 @@ let NewsfeedComponent = class NewsfeedComponent {
         this.mainService = mainService;
     }
     ngOnInit() {
+        this.getQueriedNews();
         this.mainService.getNewsFeed().subscribe(resp => {
             this.fetchHeadlines();
             this.allNews = resp;
             this.data = this.allNews.pop();
+        });
+    }
+    getQueriedNews() {
+        this.mainService.getKeyword().subscribe(keyword => {
+            this.keyword = keyword;
+            this.getNews(this.keyword);
+        });
+    }
+    getNews(keyword) {
+        this.mainService.getRelatedNews(keyword).subscribe(resp => {
+            this.allNews = resp;
+            this.data = this.allNews.pop();
+            this.fetchHeadlines();
         });
     }
     fetchHeadlines() {

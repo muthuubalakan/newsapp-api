@@ -13,8 +13,8 @@ TOP_NEWS = "top-headlines"
 class NEWSAPIService:
     def __init__(self, query=None):
         self.query_string = query
-        self.countries = ["us", "de"]
-        self.topics = ["technology", "bitcoin", "business"]
+        self.countries = ["us", "in"]
+        self.topics = ["technology", "sports", "business"]
         self.category = None
 
     def headlines(self, country):
