@@ -37,7 +37,7 @@ A public news api service is used to fetch news and fetched data are stored into
 For the theming, Angular material pre-built 'indigo-pink.css' is used. 
 Refer https://material.io/design/
 
-**Futher development**
+**Further development**
 
 The UI can be developed further with Angular 8. (link to the Angular8 Frontend [here](https://github.com/muthuubalakan/newsapp)).
 
